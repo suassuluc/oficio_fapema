@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
 class ToggleBoolean extends Component
 {
+    public function render()
+    {
+        return view('livewire.toggle-boolean');
+    }
+
     public $value = 0;
 
     public function toggle()

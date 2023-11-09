@@ -72,5 +72,6 @@
 </section>
 
 
-@livewire('toggle-boolean')
+<livewire:toggle-boolean />
+
 @endsection

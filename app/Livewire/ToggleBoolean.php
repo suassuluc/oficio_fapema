@@ -3,24 +3,31 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\oficio;
 
 class ToggleBoolean extends Component
 {
-    public function render()
-    {
-        return view('livewire.toggle-boolean');
-    }
 
-    public $value = 0;
+    public $oficioId;
+
+    public function mount($oficioId)
+    {
+        $this->oficioId = $oficioId;
+    }
 
     public function toggle()
     {
-        $this->value = !$this->value;
+        $oficio = oficio::find($this->oficioId);
 
-        $oficio = Oficio::findOrFail($this->id);
-        $oficio->authorized = !$oficio->authorized;
-        $oficio->save();
+        if ($oficio) {
+            $oficio->autorizado = !$oficio->autorizado;
+            $oficio->save();
 
-        $this->emit('oficioUpdated');
+        }
+    }
+
+    public function render()
+    {
+        return view('livewire.toggle-boolean');
     }
 }

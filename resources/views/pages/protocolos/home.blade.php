@@ -40,9 +40,8 @@
                                         <td class="text-center">{{$oficios->assunto}}</td>
                                         <td class="text-center">{{$oficios->data}}</td>
                                         <td class="text-center">
-
-                                            <button class="btn btn-sm btn-primary toggle-autorizado" data-oficio-id="{{$oficios->id}}" wire:click="toggleAutorizado({{$oficios->id}})">
-                                                {{$oficios->autorizado}}
+                                            <button class="btn btn-sm btn-primary toggle-autorizado" wire:click="toggle"wire:loading.attr="disabled">
+                                                {{$oficios->autorizado }}
                                             </button>
                                         </td>
 
@@ -71,7 +70,16 @@
     </section>
 </section>
 
+<livewire:toggle-boolean :oficioId="$oficios->id" />
 
-<livewire:toggle-boolean />
+
+<script>
+    // Seu script personalizado aqui
+    Livewire.on('oficioUpdated', () => {
+        console.log('Oficio Updated!');
+        // window.location.reload();
+    });
+</script>
+
 
 @endsection

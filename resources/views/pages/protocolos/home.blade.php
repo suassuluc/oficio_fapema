@@ -26,6 +26,7 @@
                                         <th class="text-center">Assunto</th>
                                         <th class="text-center">Data </th>
                                         <th class="text-center">Autorizado </th>
+                                        <th class="text-center">Confirmar Autorização</th>
                                     </tr>
                                 </thead>
                             </div>
@@ -39,22 +40,19 @@
                                         <td class="text-center">{{$oficios->numero_oficio}}</td>
                                         <td class="text-center">{{$oficios->assunto}}</td>
                                         <td class="text-center">{{$oficios->data}}</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-primary toggle-autorizado" wire:click="toggle"wire:loading.attr="disabled">
-                                                {{$oficios->autorizado }}
-                                            </button>
-                                        </td>
+                                        <td class="text-center">{{$oficios->autorizado }}</td>
+                                        <td class="text-center"> <livewire:toggle-boolean :oficioId="$oficios->id" /> </td>
 
                                     </tr>
 
                                     @empty
                                     <tr>
-                                        <td colspan="5" class="text-center">Nenhum Registro encontrado</td>
+                                        <td colspan="6" class="text-center">Nenhum Registro encontrado</td>
                                     </tr>
                                     @endforelse
                                     <tfoot>
                                         <tr>
-                                            <td colspan="5">
+                                            <td colspan="6">
                                                 <a class="btn btn-primary float-right" href="{{route('protocolos.create')}}">Adicionar Assunto do oficio</a>
                                             </td>
                                         </tr>
@@ -70,15 +68,13 @@
     </section>
 </section>
 
-<livewire:toggle-boolean :oficioId="$oficios->id" />
+
 
 
 <script>
-    // Seu script personalizado aqui
     Livewire.on('oficioUpdated', () => {
-        console.log('Oficio Updated!');
-        // window.location.reload();
-    });
+    window.location.reload();
+});
 </script>
 
 

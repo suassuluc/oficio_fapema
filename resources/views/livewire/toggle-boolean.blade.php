@@ -1,3 +1,5 @@
 <div>
-    <button type="submit" class="btn btn-default" wire:click="toggle">Toggle Valor</button>
+    <button type="submit" class="btn btn-success" wire:click="toggle">Autorizar</button>
+
+    <button type="submit" class="btn btn-danger" wire:click="togglenot">Não Autorizar</button>
 </div>

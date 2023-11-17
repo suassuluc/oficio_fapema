@@ -58,6 +58,11 @@
                                         </tr>
                                     </tfoot>
                                 </tbody>
+                                <script>
+                                    Livewire.on('oficioUpdated', () => {
+                                        console.log('Oficio Updated!');
+                                    });
+                                </script>
                             </body>
                             </table>
                         </div>
@@ -71,11 +76,7 @@
 
 
 
-<script>
-    Livewire.on('oficioUpdated', () => {
-    window.location.reload();
-});
-</script>
+
 
 
 @endsection

@@ -43,7 +43,6 @@ class ToggleBoolean extends Component
             $oficio->autorizado = $oficio->autorizado === 0 ? 1 : 0;
             $oficio->save();
 
-            $this->emit('oficioUpdated');
 
         }
     }

@@ -37,15 +37,14 @@
         @else
             @include('adminlte::partials.cwrapper.cwrapper-iframe')
         @endempty
-
         {{-- Footer --}}
         @hasSection('footer')
-            @include('adminlte::partials.footer.footer')
+        @include('adminlte::partials.footer.footer')
         @endif
 
         {{-- Right Control Sidebar --}}
         @if(config('adminlte.right_sidebar'))
-            @include('adminlte::partials.sidebar.right-sidebar')
+        @include('adminlte::partials.sidebar.right-sidebar')
         @endif
 
     </div>

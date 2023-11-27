@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProtocolosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Livewire\ListOficio;
 
 
 /*
@@ -30,6 +31,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::redirect('/', 'home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('protocolos.home');
+    Route::get('/home2', ListOficio::class)->name('protocolos.home2');
+
     //rotas de protocolos
     Route::get('/protocolos/create',[ProtocolosController::class, 'create'])->name('protocolos.create');
     Route::post('/protocolos/store',[ProtocolosController::class,'store'])->name('protocolos.store');

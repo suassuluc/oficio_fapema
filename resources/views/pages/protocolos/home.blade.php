@@ -37,7 +37,7 @@
                                     @forelse ($oficio as $oficios)
                                     <tr>
                                         <td class="text-center">{{$oficios->id}}</td>
-                                        <td class="text-center">{{$oficios->numero_oficio}}</td>
+                                        <td class="text-center">{{ $oficios->numeroFormatado }}</td>
                                         <td class="text-center">{{$oficios->assunto}}</td>
                                         <td class="text-center">{{$oficios->data}}</td>
                                         <td class="text-center">{{$oficios->autorizado }}</td>
@@ -58,11 +58,6 @@
                                         </tr>
                                     </tfoot>
                                 </tbody>
-                                <script>
-                                    Livewire.on('oficioUpdated', () => {
-                                        console.log('Oficio Updated!');
-                                    });
-                                </script>
                             </body>
                             </table>
                         </div>

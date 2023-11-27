@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\oficio;
+use App\Models\Oficio;
 use App\Models\setor;
 use App\Models\usuarios;
 

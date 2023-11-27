@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
-class oficio extends Model
+class Oficio extends Model
 {
     protected $table ='oficios';
 
@@ -27,4 +28,21 @@ class oficio extends Model
     {
         $this->attributes['data'] = $value;
     }
+
+    public function getNumeroFormatadoAttribute()
+{
+
+    $ano = date('y');
+
+
+    $numeroFormatado = sprintf('%05d/%s', $this->attributes['numero_oficio'], $ano);
+
+
+    if ($this->attributes['numero_oficio'] > 0) {
+        return $numeroFormatado;
+    } else {
+        return '';
+    }
+
+}
 }

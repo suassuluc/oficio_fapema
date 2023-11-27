@@ -10,30 +10,34 @@ class ToggleBoolean extends Component
 
     public $oficioId;
 
-    public function emit($event, $payload = [])
-{
-    parent::emit($event, $payload);
-}
 
     public function mount($oficioId)
     {
         $this->oficioId = $oficioId;
     }
 
+
+    #[On('refresh')]
     public function toggle()
     {
         $oficio = oficio::find($this->oficioId);
 
         if ($oficio) {
             $oficio->autorizado = $oficio->autorizado === 1 ? 0 : 1;
-            $oficio->save();
 
-            $this->emit('oficioUpdated');
+            if ($oficio->autorizado) {
+                $oficio->increment('numero_oficio');
+            }
+            $oficio->saveOrFail();
 
-
+            $this->dispatch('refresh', function () {
+            // Recarrega a página diretamente
+            location.reload();
+        });
 
         }
     }
+
 
     public function togglenot()
     {
@@ -41,7 +45,10 @@ class ToggleBoolean extends Component
 
         if ($oficio) {
             $oficio->autorizado = $oficio->autorizado === 0 ? 1 : 0;
-            $oficio->save();
+
+            $oficio->saveOrFail();
+
+            $this->dispatch('refresh');
 
 
         }

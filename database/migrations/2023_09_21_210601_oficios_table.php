@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('oficios', function (Blueprint $table) {
         $table->increments('id');
         $table->string('destino', 20)->nullable();
-        $table->string('assunto', 50);
+        $table->string('assunto', 500);
         $table->date('data');
         $table->unsignedBigInteger('setor_id')->nullable();
         $table->foreign('setor_id')->references('id')->on('setor');

@@ -41,15 +41,15 @@
                                             <td class="text-center">{{$oficios->autorizado }}</td>
                                             <td class="text-center">
                                                 <div class="custom-control custom-switch">
-                                                    <input type="checkbox" class="custom-control-input" id="{{$oficios->id}}" wire:model.defer="receiveUpdates[]" wire:change="processMark({{ $oficios->id }})"<?php if ($oficios->autorizado == 'sim') echo "checked='checked'"; ?>>
+                                                    <input type="checkbox" class="custom-control-input" id="{{$oficios->id}}" wire:model.live="row.{{$oficios->id}}" wire:click="processMark({{ $oficios->id }})">
                                                     <label class="custom-control-label" for="{{$oficios->id}}"></label>
                                                 </div>
                                             </td>
 
                                         </tr>
 
-                                            ---
-                                        {{$ofico_id}}
+                                        {{ var_dump($row) }}
+
                                         @empty
                                         <tr>
                                             <td colspan="6" class="text-center">Nenhum Registro encontrado</td>

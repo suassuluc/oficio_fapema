@@ -16,14 +16,26 @@ class ListOficio extends Component
 
     public $count;
 
+    public $toogle = false;
+
+    public $row = [];
+
     public function processMark($id){
+
+        $this->toogle = !$this->toogle;
+
         $this->ofico_id = $id;
 
         $oficio = Oficio::find($this->ofico_id);
 
-        $oficio->autorizado = true;
+        if($this->row[$id] == true){
+            $oficio->autorizado = true;
+        } else {
+            $oficio->autorizado = false;
+        }
 
-        $oficio->numero_oficio = 39754578;
+        // recebe numero randomico
+        $oficio->numero_oficio = rand(1000, 9999);
 
         $oficio->saveOrFail();
     }

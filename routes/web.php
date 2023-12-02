@@ -30,8 +30,8 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
 
     Route::redirect('/', 'home');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('protocolos.home');
-    Route::get('/home2', ListOficio::class)->name('protocolos.home2');
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('protocolos.home');
+    Route::get('/home', ListOficio::class)->name('protocolos.home');
 
     //rotas de protocolos
     Route::get('/protocolos/create',[ProtocolosController::class, 'create'])->name('protocolos.create');

@@ -30,11 +30,6 @@ class ToggleBoolean extends Component
             }
             $oficio->saveOrFail();
 
-            $this->dispatch('refresh', function () {
-            // Recarrega a página diretamente
-            location.reload();
-        });
-
         }
     }
 

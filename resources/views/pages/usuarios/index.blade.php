@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Todos os Usuários</h3>
                 </div>
-                <div class="input-group input-group-sm" style="width: 350px;">
+                {{-- <div class="input-group input-group-sm" style="width: 350px;">
                     <input type="text" wire:model.live="search" class="form-control float-right"
                         placeholder="Pesquisar por nome do participante">
                     <div class="input-group-append">
@@ -24,14 +24,14 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div> --}}
                 <div class="card-body p-0">
                     <table class="table table-striped table-bordered">
                         <thead>
                         <tr>
                             <th class="text-center">Nome</th>
                             <th class="text-center">Status</th>
-                            <th class="text-center">Ações</th>
+                            {{-- <th class="text-center">Ações</th> --}}
                         </tr>
                         </thead>
                         <tbody>
@@ -39,10 +39,10 @@
                                 <tr>
                                     <td class="text-center">{{$Usuarios->name}}</td>
                                     <td class="text-center">{{$Usuarios->role}}</td>
-                                    <td>
-                                        <a class="text-center btn-outline-info" href=""><i
+                                    {{-- <td>
+                                        <a class="text-center; btn-outline-info" href=""><i
                                             class="far fa-eye"></i></a>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @empty
                                 <tr>

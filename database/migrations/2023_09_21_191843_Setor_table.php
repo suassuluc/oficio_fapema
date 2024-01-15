@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('setor', function (Blueprint $table) {
+    Schema::create('setores', function (Blueprint $table) {
         $table->bigIncrements('id');
-        $table->string('nome', 20);
+        $table->string('nome', 200);
         $table->timestamps();
     });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('setor');
+        Schema::dropIfExists('setores');
     }
 };

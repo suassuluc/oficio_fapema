@@ -2,6 +2,7 @@
     <td class="text-center">{{ $oficio->id }}</td>
     <td class="text-center">{{ $oficio->numeroFormatado }}</td>
     <td class="text-center">{{ $oficio->assunto }}</td>
+    <td class="text-center">{{ $oficio->setor->nome }}</td>
     <td class="text-center">{{ $oficio->data }}</td>
     <td class="text-center">{{ $oficio->autorizado }}</td>
     @if (auth()->user()->can('admin'))

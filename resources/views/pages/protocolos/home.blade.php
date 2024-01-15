@@ -47,12 +47,12 @@
 
                                     @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">Nenhum Registro encontrado</td>
+                                        <td colspan="7" class="text-center">Nenhum Registro encontrado</td>
                                     </tr>
                                     @endforelse
                                     <tfoot>
                                         <tr>
-                                            <td colspan="6">
+                                            <td colspan="7">
                                                 <a class="btn btn-primary float-right" href="{{route('protocolos.create')}}">Adicionar Assunto do oficio</a>
                                             </td>
                                         </tr>

@@ -22,6 +22,7 @@
                                                     <th class="text-center">N°</th>
                                                     <th class="text-center">N° do oficio </th>
                                                     <th class="text-center">Assunto</th>
+                                                    <th class="text-center">Destino</th>
                                                     <th class="text-center">Data </th>
                                                     <th class="text-center">Autorizado </th>
                                                     @if (auth()->user()->can('admin'))
@@ -30,22 +31,19 @@
                                                 </tr>
                                             </thead>
                                         </div>
-
                                         <body>
-
-
                                             <tbody>
                                                 @forelse ($oficio as $oficios)
                                                 <livewire:oficio-row :oficio="$oficios" :key="$oficios->id"/>
                                                 @empty
                                                     <tr>
-                                                        <td colspan="6" class="text-center">Nenhum Registro
+                                                        <td colspan="7" class="text-center">Nenhum Registro
                                                             encontrado</td>
                                                     </tr>
                                                 @endforelse
                                             <tfoot>
                                                 <tr>
-                                                    <td colspan="6">
+                                                    <td colspan="7">
                                                         <a class="btn btn-primary float-right"
                                                             href="{{ route('protocolos.create') }}">Adicionar Assunto
                                                             do oficio</a>

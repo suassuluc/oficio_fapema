@@ -15,7 +15,7 @@ return new class extends Migration
         $table->bigIncrements('id');
         $table->string('nome', 20);
         $table->unsignedBigInteger('setor_id');
-        $table->foreign('setor_id')->references('id')->on('setor');
+        $table->foreign('setor_id')->references('id')->on('setores');
         $table->timestamps();
 
     });

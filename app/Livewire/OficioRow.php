@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Oficio;
 use Livewire\Component;
+use App\Models\Setor;
 
 class OficioRow extends Component
 {

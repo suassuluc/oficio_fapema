@@ -17,7 +17,7 @@ return new class extends Migration
         $table->string('assunto', 500);
         $table->date('data');
         $table->unsignedBigInteger('setor_id')->nullable();
-        $table->foreign('setor_id')->references('id')->on('setor');
+        $table->foreign('setor_id')->references('id')->on('setores')->nullable()->constrained();
         $table->boolean('autorizado')->default(false);
         $table->integer('numero_oficio')->nullable();
         $table->timestamps();

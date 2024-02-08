@@ -43,14 +43,14 @@
 
                                                         </select>
                                                     </div>
-                                                    {{-- <label for="">Documento:</label>
+                                                        <label for="">Documento:</label>
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" name="arquivo">
+                                                        <input type="file" class="custom-file-input" name="arquivos">
                                                         <label class="custom-file-label" for="customFile">
-                                                            Nenhum arquivo Selecionado
+
                                                         </label>
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                         <tfoot class="border border-danger">
                                             <div>
                                                 <button type="submit" class="btn btn-primary float-right ">Adicionar

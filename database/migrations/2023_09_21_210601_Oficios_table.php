@@ -20,6 +20,7 @@ return new class extends Migration
         $table->foreign('setor_id')->references('id')->on('setores')->nullable()->constrained();
         $table->boolean('autorizado')->default(false);
         $table->integer('numero_oficio')->nullable();
+        $table->string('arquivos')->nullable();
         $table->timestamps();
 
     });

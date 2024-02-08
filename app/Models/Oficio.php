@@ -20,6 +20,7 @@ class Oficio extends Model
         'setor_id',
         'autorizado',
         'numero_oficio',
+        'arquivos',
     ];
 
     public function getAutorizadoAttribute($value)
